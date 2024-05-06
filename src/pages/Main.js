@@ -3,6 +3,12 @@ import FirstSlide from "../components/FirstSlide";
 import Navbar from "../components/Navbar";
 import SpecialStrip from "../components/SpecialStrip";
 import { useMediaQuery } from "@mui/material";
+import SecondPage from "./SecondPage";
+import ThirdPage from "./ThirdPage";
+import FourthPage from "./FourthPage";
+import FifthPage from "./FifthPage";
+import SixthPage from "./SixthPage";
+import SeventhPage from "./SeventhPage";
 
 function Main() {
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -55,6 +61,12 @@ function Main() {
         )}
       </div>
       <FirstSlide />
+      <SecondPage />
+      <ThirdPage />
+      <FourthPage />
+      <FifthPage />
+      <SixthPage/>
+      <SeventhPage />
     </div>
   );
 }
