@@ -87,7 +87,7 @@ function FifthPage() {
         >
           <ItemsSlide ItemArray={ItemArray} />
         </div>
-  
+        {numberOfClick > 1 && (
         <div
           style={{
             position: "absolute",
@@ -104,7 +104,10 @@ function FifthPage() {
         >
           <ArrowLeftOutlined style={{ color: "white" }} />
         </div>
-  
+        )}
+
+
+{numberOfClick < 4 && (
         <div
           style={{
             position: "absolute",
@@ -121,7 +124,7 @@ function FifthPage() {
         >
           <ArrowRightOutlined style={{ color: "white" }} />
         </div>
-  
+)}
   
         <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <div

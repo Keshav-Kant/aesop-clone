@@ -9,6 +9,11 @@ import FourthPage from "./FourthPage";
 import FifthPage from "./FifthPage";
 import SixthPage from "./SixthPage";
 import SeventhPage from "./SeventhPage";
+import EigthPage from "./EigthPage";
+import NinthPage from "./NinthPage";
+import TenthPage from "./TenthPage";
+import EleventhPage from "./EleventhPage";
+import TwelfthPage from "./TwelfthPage";
 
 function Main() {
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -67,6 +72,11 @@ function Main() {
       <FifthPage />
       <SixthPage/>
       <SeventhPage />
+      <EigthPage />
+      <NinthPage />
+      <TenthPage />
+      <EleventhPage />
+      <TwelfthPage />
     </div>
   );
 }

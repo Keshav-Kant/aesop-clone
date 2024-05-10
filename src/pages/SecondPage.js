@@ -45,24 +45,18 @@ function SecondPage() {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: 500, behavior: "smooth" });
     }
-    if(numberOfClick > 3){
+    if (numberOfClick > 3) {
       setNumberOfClick(4);
-    }
-    else
-    setNumberOfClick(numberOfClick + 1);
+    } else setNumberOfClick(numberOfClick + 1);
   };
 
   const scrollToLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -500, behavior: "smooth" });
-
-      
     }
-    if(numberOfClick < 2){
+    if (numberOfClick < 2) {
       setNumberOfClick(1);
-    }
-    else
-    setNumberOfClick(numberOfClick - 1);
+    } else setNumberOfClick(numberOfClick - 1);
   };
 
   return (
@@ -91,107 +85,108 @@ function SecondPage() {
         />
         <ItemsSlide ItemArray={ItemArray} />
       </div>
+      {numberOfClick > 1 && (
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: "50%",
+            width: 70,
+            height: 70,
+            backgroundColor: "#333",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onClick={scrollToLeft}
+        >
+          <ArrowLeftOutlined style={{ color: "white" }} />
+        </div>
+      )}
 
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          top: "50%",
-          width: 70,
-          height: 70,
-          backgroundColor: "#333",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={scrollToLeft}
-      >
-        <ArrowLeftOutlined style={{ color: "white" }} />
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          top: "50%",
-          width: 70,
-          height: 70,
-          backgroundColor: "#333",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={scrollToRight}
-      >
-        <ArrowRightOutlined style={{ color: "white" }} />
-      </div>
-
+      {numberOfClick < 4 && (
+        <div
+          style={{
+            position: "absolute",
+            right: 0,
+            top: "50%",
+            width: 70,
+            height: 70,
+            backgroundColor: "#333",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onClick={scrollToRight}
+        >
+          <ArrowRightOutlined style={{ color: "white" }} />
+        </div>
+      )}
 
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <div
-  style={{
-    height: 5,
-    backgroundColor: "rgba(0,0,0,.2)",
-    position: "relative",
-    width: "90%",
-    display: "flex",
-    flexDirection: "row",
-    transition: "width 0.5s ease", // Apply transition to width property
-  }}
->
-  {numberOfClick === 1 && (
-    <div
-      style={{
-        width: "25%",
-        backgroundColor: "rgba(0,0,0,.6)",
-        height: "100%",
-        position: "relative",
-        left: 0,
-        transition: "left 0.5s ease", // Also apply transition to left property if you want smooth movement
-      }}
-    ></div>
-  )}
+          style={{
+            height: 5,
+            backgroundColor: "rgba(0,0,0,.2)",
+            position: "relative",
+            width: "90%",
+            display: "flex",
+            flexDirection: "row",
+            transition: "width 0.5s ease", // Apply transition to width property
+          }}
+        >
+          {numberOfClick === 1 && (
+            <div
+              style={{
+                width: "25%",
+                backgroundColor: "rgba(0,0,0,.6)",
+                height: "100%",
+                position: "relative",
+                left: 0,
+                transition: "left 0.5s ease", // Also apply transition to left property if you want smooth movement
+              }}
+            ></div>
+          )}
 
-  {numberOfClick === 2 && (
-    <div
-      style={{
-        width: "25%",
-        backgroundColor: "rgba(0,0,0,.6)",
-        height: "100%",
-        left: "25%",
-        position: "relative",
-        transition: "left 0.5s ease",
-      }}
-    ></div>
-  )}
+          {numberOfClick === 2 && (
+            <div
+              style={{
+                width: "25%",
+                backgroundColor: "rgba(0,0,0,.6)",
+                height: "100%",
+                left: "25%",
+                position: "relative",
+                transition: "left 0.5s ease",
+              }}
+            ></div>
+          )}
 
-  {numberOfClick === 3 && (
-    <div
-      style={{
-        width: "25%",
-        backgroundColor: "rgba(0,0,0,.6)",
-        height: "100%",
-        left: "50%",
-        position: "relative",
-        transition: "left 0.5s ease",
-      }}
-    ></div>
-  )}
+          {numberOfClick === 3 && (
+            <div
+              style={{
+                width: "25%",
+                backgroundColor: "rgba(0,0,0,.6)",
+                height: "100%",
+                left: "50%",
+                position: "relative",
+                transition: "left 0.5s ease",
+              }}
+            ></div>
+          )}
 
-  {numberOfClick === 4 && (
-    <div
-      style={{
-        width: "25%",
-        backgroundColor: "rgba(0,0,0,.6)",
-        height: "100%",
-        position: "relative",
-        left: "75%",
-        transition: "left 0.5s ease",
-      }}
-    ></div>
-  )}
-</div>
-
+          {numberOfClick === 4 && (
+            <div
+              style={{
+                width: "25%",
+                backgroundColor: "rgba(0,0,0,.6)",
+                height: "100%",
+                position: "relative",
+                left: "75%",
+                transition: "left 0.5s ease",
+              }}
+            ></div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import SideTextComponent from "../components/SideTextComponent";
 import ItemsSlide from "../components/ItemsSlide";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
-function SeventhPage() {
+function TenthPage() {
     const [numberOfClick, setNumberOfClick] = useState(1);
   
     const ItemArray = [
@@ -199,4 +199,4 @@ function SeventhPage() {
     );
   }
 
-export default SeventhPage
+export default TenthPage
